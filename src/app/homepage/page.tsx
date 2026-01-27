@@ -1,6 +1,4 @@
-import CV from '../assets/CV_202601_SW.pdf';
-
-export function Homepage() {
+export default function Homepage() {
     //TODO
 
     return(

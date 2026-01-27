@@ -1,9 +1,9 @@
 import   styles     from './page.module.css';
 import   React      from 'react';
 
-import { Homepage } from '../pages/homepage.tsx';
-import { About    } from '../pages/about.tsx';
-import { Projects } from '../pages/projects.tsx';
+import Homepage from './homepage/page.tsx';
+import About    from './about/page.tsx';
+import Projects from './projects/page.tsx';
 
 
 

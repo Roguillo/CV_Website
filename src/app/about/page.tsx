@@ -1,4 +1,4 @@
-export function About() {
+export default function About() {
     //TODO
 
     return(

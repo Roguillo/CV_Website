@@ -1,9 +1,11 @@
-import   styles     from './page.module.css';
-import   React      from 'react';
+'use client';
 
-import Homepage from './homepage/page.tsx';
-import About    from './about/page.tsx';
-import Projects from './projects/page.tsx';
+import styles   from './page.module.css';
+import React    from 'react';
+
+import Homepage from '../screens/homepage';
+import About    from '../screens/about';
+import Projects from '../screens/projects';
 
 
 

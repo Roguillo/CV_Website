@@ -1,0 +1,84 @@
+.about {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 8vw, 6rem) 1.5rem;
+    animation: about-in 500ms ease-out both;
+}
+
+@keyframes about-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.about-header {
+    border-left: 6px solid var(--accent);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.about-header h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 9vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+}
+
+.about-section h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.about-body {
+    max-width: 60ch;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+}
+
+.about-body p {
+    margin: 0 0 1em;
+}
+
+.about-body p:last-child {
+    margin-bottom: 0;
+}
+
+.about-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+
+.about-body a:hover {
+    color: var(--accent);
+}
+
+.about-body a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 40rem) {
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about { animation: none; }
+}

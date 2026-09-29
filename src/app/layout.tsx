@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Roberto Carrillo Aguilar's CV website",
+  title: "Roberto Carrillo Aguilar | Portfolio",
   description: "",
 };
 

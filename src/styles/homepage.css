@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap");
+
+:root {
+    --bg: #f2f4f7;
+    --ink: #16202e;
+    --muted: #5d6878;
+    --rule: #cfd5de;
+    --accent: #a6192e;
+    --accent-ink: #ffffff;
+    --font: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #131a24;
+        --ink: #eef1f5;
+        --muted: #9aa5b5;
+        --rule: #2f3947;
+        --accent: #e0596b;
+        --accent-ink: #131a24;
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+}
+
+.homepage {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 8vw, 6rem) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    animation: homepage-in 500ms ease-out both;
+}
+
+@keyframes homepage-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.homepage-header {
+    border-left: 6px solid var(--accent);
+    padding-left: 1.25rem;
+}
+
+.homepage-header h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 9vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.location {
+    margin: 0.75rem 0 0;
+    font-size: 1.125rem;
+    color: var(--muted);
+}
+
+/* Emails */
+.email {
+    font-style: normal;
+}
+
+.email dl {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+}
+
+.email dl > div {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1rem;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.email dt {
+    color: var(--muted);
+}
+
+.email dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.email a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+
+.email a:hover {
+    color: var(--accent);
+}
+
+.personal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.1rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+
+.btn svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+}
+
+.btn:focus-visible,
+.email a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 30rem) {
+    .email dl > div {
+        grid-template-columns: 1fr;
+        gap: 0.125rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .homepage { animation: none; }
+    .btn { transition: none; }
+}

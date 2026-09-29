@@ -1,12 +1,71 @@
+import "../styles/homepage.css";
+
 export default function Homepage() {
-    return(
-            <div>
-                <div>Roberto Carrillo Aguilar</div>
-                <div>Worcester, MA</div>
-                <div>College: raguilar@wpi.edu, Personal: robcargo17@gmail.com</div>
-                <div><a href="https://github.com/Roguillo/">GitHub</a></div>
-                <div><a href="https://www.linkedin.com/in/roberto-carrillo-aguilar/">LinkedIn</a></div>
-                <div><a href="/CV_202601_SW.pdf" download="Roberto_Carrillo_Aguilar_Resume-CV">Download Resume/CV</a></div>
-            </div>
-        );
-    }
+    return (
+        <main className="homepage">
+            <header className="homepage-header">
+                <h1>Roberto Carrillo Aguilar</h1>
+                <p className="location">Worcester, MA</p>
+            </header>
+
+            <address className="email">
+                <dl>
+                    <div>
+                        <dt>College</dt>
+                        <dd><a href="mailto:raguilar@wpi.edu">raguilar@wpi.edu</a></dd>
+                    </div>
+                    <div>
+                        <dt>Personal</dt>
+                        <dd><a href="mailto:robcargo17@gmail.com">robcargo17@gmail.com</a></dd>
+                    </div>
+                </dl>
+            </address>
+
+            <ul className="personal-links">
+                <li>
+                    <a
+                        className="btn btn-primary"
+                        href="/CV_202601_SW.pdf"
+                        download="Roberto_Carrillo_Aguilar_Resume-CV"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download resume
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className="btn"
+                        href="https://github.com/Roguillo/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className="btn"
+                        href="https://www.linkedin.com/in/roberto-carrillo-aguilar/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </main>
+    );
+}

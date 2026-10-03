@@ -1,118 +1,60 @@
+
 import "../styles/projects.css";
 
-const PROJECT_SECTIONS = [
+type ProjectLink = {
+    label: string;
+    url: string;
+};
+
+type Project = {
+    title: string;
+    summary: string;
+    tags: string[];
+    date: string;
+    context: string;
+    links: ProjectLink[];
+    media: {
+        src: string; 
+        alt: string
+    }[];
+};
+
+type ProjectSection = {
+    category: string;
+    projects: Project[];
+};
+
+const PROJECT_SECTIONS: ProjectSection[] = [
     {
-        category: "Robotics Software",
+        category: "Robotic Systems",
         projects: [
             {
-                title: "4 DOF Robotic Arm for Ball Sorting",
-                intro: "...",
-                date: "August 2025 - October 2025",
-                description: "...",
+                title: "Autonomous Maze Exploration Robot",
+                summary: "A Turtlebot running ROS2 that autonomously navigates a maze and localizes within it.",
+                tags: [
+                    "ROS 2",
+                    "SLAM",
+                    "Nav2/AMCL",
+                    "Path Planning",
+                    "Gazebo"
+                ],
+                date: "March 2026 - May 2026",
+                context: "Unified Robotics IV: Navigation (RBE 3002)",
                 links: [
                     {
-                        label: "...",
-                        url: "..."
+                        label: "GitHub",
+                        url: "https://github.com/Roguillo/RBE_3002"
                     }
                 ],
-                media: "..."
-            },
-            {
-                title: "Mock Garbage Collection Robot",
-                intro: "...",
-                date: "March 2025 - May 2025",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..." 
-            },
-            {
-                title: "Mock Pick-and-Place Warehouse Robot",
-                intro: "...",
-                date: "January 2025 - March 2025",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..."
-            }
-        ]
-    },
-    {
-        category: "Firmware",
-        projects: [
-            {
-                title: "Snake Game on Tiva C Board using FreeRTOS",
-                intro: "...",
-                date: "October 2025 - December 2025",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..."
-            }
-        ]
-    },
-    {
-        category: "Printed Circuit Boards",
-        projects: [
-            {
-                title: "Power Distribution and Sensor Hub PCB",
-                intro: "...",
-                date: "October 2025 - November 2025",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..."
-            },
-            {
-                title: "LED Dice & Temperature Sensor PCB",
-                intro: "...",
-                date: "October 2024 - December 2024",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..."
-            }
-        ]
-    },
-    {
-        category: "General Software",
-        projects: [
-            {
-                title: "ShopComp.online Web Application",
-                intro: "...",
-                date: "October 2025 - December 2025",
-                description: "...",
-                links: [
-                    {
-                        label: "...",
-                        url: "..."
-                    }
-                ],
-                media: "..."
+                media:[
+                    {src: "/test_image.png", alt: "photo"},
+                    {src: "/test_image.png", alt: "photo"},
+                    {src: "/test_image.png", alt: "photo"}
+                ]
             }
         ]
     }
-]
+];
 
 export default function Projects() {
     return (
@@ -128,15 +70,33 @@ export default function Projects() {
                     <div className="projects-list">
                         {cat.projects.map((project) => (
                             <article key={project.title} className="projects-item">
+                                <div className="projects-gallery">
+                                    {project.media.map((m, i) => (
+                                        <img
+                                            key={`${m.src}-${i}`}
+                                            className="projects-media"
+                                            src={m.src}
+                                            alt={m.alt}
+                                            loading="lazy"
+                                        />
+                                    ))}
+                                </div>
+
                                 <header>
-                                    <div className="projects-titleRow">
-                                        <h3>{project.title}</h3>
-                                        <p className="projects-date">{project.date}</p>
-                                    </div>
-                                    <p className="projects-intro">{project.intro}</p>
+                                    <h3>{project.title}</h3>
+                                    <p className="projects-meta">
+                                        <span className="projects-date">{project.date}</span>
+                                        <span className="projects-context">{project.context}</span>
+                                    </p>
                                 </header>
 
-                                <p className="projects-description">{project.description}</p>
+                                <p className="projects-summary">{project.summary}</p>
+
+                                <ul className="projects-tags">
+                                    {project.tags.map((tag) => (
+                                        <li key={tag}>{tag}</li>
+                                    ))}
+                                </ul>
 
                                 {project.links.length > 0 && (
                                     <ul className="projects-links">

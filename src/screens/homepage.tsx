@@ -5,7 +5,7 @@ export default function Homepage() {
         <main className="homepage">
             <header className="homepage-header">
                 <h1>Roberto Carrillo Aguilar</h1>
-                <p className="location">Worcester, MA</p>
+                <p className="location">San Diego, CA / Worcester, MA</p>
             </header>
 
             <address className="email">
@@ -25,15 +25,15 @@ export default function Homepage() {
                 <li>
                     <a
                         className="btn btn-primary"
-                        href="/CV_202601_SW.pdf"
-                        download="Roberto_Carrillo_Aguilar_Resume-CV"
+                        href="/CV_202610_EN.pdf"
+                        download="Roberto_Carrillo_Aguilar_CV"
                     >
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
+                            <polyline points="07 10 12 15 17 10" />
                             <line x1="12" y1="15" x2="12" y2="3" />
                         </svg>
-                        Download resume
+                        Download CV/Resume
                     </a>
                 </li>
                 <li>
